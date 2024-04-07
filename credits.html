@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<!-- shh the html is not written by hand :3 -->
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Site credits - kawapure</title>
+        <link rel="prefetch" href="/static/css/base.css" />
+        <link rel="prefetch" href="/static/img/bg.png" />
+        <link rel="stylesheet" href="/static/css/base.css">
+    </head>
+    <body id="body" data-page-name="credits">
+        <script type="text/javascript">
+        (function(){
+            // https://www.useragentman.com/blog/2009/11/29/how-to-detect-font-smoothing-using-javascript/
+            function isAlisedFont()
+            {
+                try
+                {
+                    var c = document.createElement("canvas");
+                    c.width = "35";
+                    c.height = "35";
+
+                    c.style.display = "none";
+                    document.body.appendChild(c);
+                    var ctx = c.getContext("2d");
+
+                    ctx.textBaseline = "top";
+                    ctx.font = "10px Arial";
+                    ctx.fillStyle = "black";
+                    ctx.strokeStyle = "black";
+
+                    ctx.fillText("O", 0, 0);
+
+                    for (var y = 7; y >= 1; y--)
+                    {
+                        for (var x = 7; x >= 0; x--)
+                        {
+                            var alpha = ctx.getImageData(x, y, 1, 1).data[3];
+
+                            if (alpha != 255 && alpha !== 0)
+                            {
+                                c.parentNode.removeChild(c);
+                                return true;
+                            }
+                        }
+                    }
+
+                    c.parentNode.removeChild(c);
+                    return false;
+                }
+                catch (e)
+                {
+                    return false;
+                }
+            }
+
+            if (isAlisedFont())
+            {
+                document.documentElement.className += " aliased-fonts";
+            }
+        })();
+        </script>
+        <div id="nav" class="card">
+    <a href="/">
+        Home
+    </a>
+    <a href="/about">
+        About me
+    </a>
+    <a href="/mozilla_simple_docs/">
+        Simple Mozilla Documentation
+    </a>
+        </div>
+        <div id="content-wrapper" class="card">
+            <div id="content">
+    <h1>Site credits</h1>
+    <h3>Resources used by this site:</h3>
+    <ul>
+        <li>
+            <a href="//www.deviantart.com/stevenquartzuniverse/art/Amethyst-Custom-Box-2-560234531">
+                Site background by StevenQuartzUniverse on deviantART
+            </a>
+        </li>
+        <li>
+            <a href="//www.deviantart.com/deathpwny/art/Flutters-you-so-fluffy-311028524">
+                Pinkie Pie and Fluttershy hugging GIF on the homepage by DeathPwny on deviantART
+            </a>
+        </li>
+    </ul>
+            </div>
+            <div id="footer-container">
+                <div id="footer">
+                    <a href="/credits">
+                        Site credits
+                    </a>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,63 @@
+body {
+  background: repeat url("/static/img/bg.png");
+  margin: 0;
+  padding: 0;
+  font-size: 13px;
+}
+
+html {
+  font-family: Arial, Helvetica, Meiryo, sans-serif;
+}
+
+html.aliased-fonts {
+  font-family: Arial, Helvetica, "MS PGothic", sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: #1c62b9;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+.card {
+  background: #fff;
+  padding: 10px;
+  border-radius: 3px;
+  max-width: 750px;
+  margin: 0 auto;
+}
+
+#nav {
+  margin: 16px auto;
+}
+#nav a {
+  margin-right: 5px;
+}
+#nav a.active {
+  color: #111;
+  font-weight: 700;
+}
+
+#footer-container {
+  border-top: 1px solid #ccc;
+  margin-top: 6px;
+  padding-top: 6px;
+}
+
+#footer {
+  text-align: center;
+}
+#footer a {
+  color: #666;
+}
+#footer a:hover {
+  color: #1c62b9;
+}
+
+#index-content {
+  font-size: 16px;
+  text-align: center;
+  margin: 15px 0;
+}
