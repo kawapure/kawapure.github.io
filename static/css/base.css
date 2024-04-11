@@ -9,10 +9,6 @@ html {
   font-family: Arial, Helvetica, Meiryo, sans-serif;
 }
 
-html.aliased-fonts {
-  font-family: Arial, Helvetica, "MS PGothic", sans-serif;
-}
-
 a {
   text-decoration: none;
   color: #1c62b9;
