@@ -58,7 +58,15 @@ a:hover {
 }
 
 #index-content {
-  font-size: 16px;
+  font-size: 20px;
   text-align: center;
   margin: 15px 0;
+}
+
+#doc-header .doc-date {
+  font-style: italic;
+  color: #666;
+}
+#doc-header .doc-date b {
+  color: #000;
 }
