@@ -9,6 +9,11 @@ html {
   font-family: Arial, Helvetica, Meiryo, sans-serif;
 }
 
+code {
+  font-family: "Courier New", Courier, monospace;
+  color: #2e6442;
+}
+
 a {
   text-decoration: none;
   color: #1c62b9;
