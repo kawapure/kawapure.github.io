@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<!-- shh the html is not written by hand :3 -->
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta property="og:title" content="Common Mozilla Frontend Things - Isabella&apos;s simple Mozilla documentation" />
+        <meta property="og:description" content="This page discusses a lot of things common to the Mozilla frontend, common to almost all Mozilla applications." />
+        <meta property="og:image" content="/static/img/cute.gif" />
+        <title>Common Mozilla Frontend Things - kawapure's simple Mozilla documentation
+</title>
+        <link rel="prefetch" href="/static/css/base.css" />
+        <link rel="prefetch" href="/static/img/bg.png" />
+        <link rel="stylesheet" href="/static/css/base.css">
+    </head>
+    <body id="body" data-page-name="mozilla-simple-docs-frontend_common">
+        <div id="nav" class="card">
+    <a href="/">
+        Home
+    </a>
+    <a href="/about">
+        About me
+    </a>
+    <a href="/mozilla_simple_docs/">
+        Simple Mozilla Documentation
+    </a>
+        </div>
+        <div id="content-wrapper" class="card">
+            <div id="content">
+    <div class="breadcrumb-container">
+        <a href="/mozilla_simple_docs/">
+            Simple Mozilla Documentation
+        </a> &gt; <b>Common Mozilla Frontend Things</b>
+    </div>
+    <div id="doc-header">
+        <span class="doc-date">
+            Last modified on <b>11 April 2024</b>.
+        </span>
+    </div>
+    <div id="doc-contents" class="markdown-output" lang="en">
+        <h1>Common Mozilla Frontend Things</h1>
+<p>This page discusses a lot of things common to the Mozilla frontend, common to almost all Mozilla applications.</p>
+<p>Note: &quot;frontend&quot; here refers to a similar topic to what you'll see referred to elsewhere as the &quot;browser chrome&quot; or &quot;browser context&quot;. I chose neutral language for this article, as I am discussing something common to Mozilla applications rather than a Firefox-centric feature.</p>
+<h2>Frontend implementation</h2>
+<p>The frontend in the majority of Mozilla applications is implemented in XUL. This may sound like outdated information in 2024, but it actually still holds true even for the latest versions of Firefox and Thunderbird. Although the XUL markup language doesn't exist anymore and the browser doesn't support loading XUL documents anymore, the XUL toolkit still exists and is heavily used throughout contemporary frontend implementations.</p>
+<p>XUL-based frontends are implemented with a web document format supported by Gecko (such as HTML or XHTML, or previously the XUL markup language), JavaScript, and CSS. The stack is basically the same as websites, but frontend scripts are given more permission than scripts on webpages are given.</p>
+<p>Note that there was previously support for non-XUL-based frontends, but this was deprecated long ago and the option to build Gecko without XUL has long since been removed (<a href="https://github.com/mozilla/gecko-dev/commit/8e411675acccb75de91220050815526916857e1a">here's the commit if you're interested</a>). As far as I can tell, this was only used in the Mac-OS-only browser Camino (formerly Chimera) (<a href="https://en.wikipedia.org/wiki/Camino_(web_browser)">Wikipedia</a>, <a href="https://hg.mozilla.org/camino/file/default">Source code</a>).</p>
+<h2>Variable access in JavaScript</h2>
+<p><em>This section applies mostly to current-day <code>.sys.mjs</code> files at the moment. I don't have documentation on <code>.jsm</code> context separation at the moment.</em></p>
+<p>There are some things to keep in mind when writing JavaScript code for the Mozilla frontend.</p>
+<p>Code is separated into modules (currently done via ES6-standard modules using the <code>.sys.mjs</code> extension, but formerly implemented with a custom format in <code>.jsm</code> files). Modules all have different scopes from one another, so they can't access each other's unexported variables (or the page's global context directly).</p>
+<p>However, each module does have global access to some things. XPConnect creates a global object with just about the same global variables as <code>window</code> called a <code>BackstagePass</code>. This is the actual context that global scripts run in, which means that they can define global variables liberally without affecting anything else.</p>
+<p>There are some other kinds of global object they can use (such as <code>Sandbox</code>), but these are significantly less common.</p>
+    </div>
+            </div>
+            <div id="footer-container">
+                <div id="footer">
+                    <a href="/credits">
+                        Site credits
+                    </a>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

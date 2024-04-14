@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<!-- shh the html is not written by hand :3 -->
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta property="og:title" content="Glossary - Isabella&apos;s simple Mozilla documentation" />
+        <meta property="og:description" content="This page explains common terminology used by Mozilla. See also: https://firefox-source-docs.mozilla.org/glossary/index.html." />
+        <meta property="og:image" content="/static/img/cute.gif" />
+        <title>Glossary - kawapure's simple Mozilla documentation
+</title>
+        <link rel="prefetch" href="/static/css/base.css" />
+        <link rel="prefetch" href="/static/img/bg.png" />
+        <link rel="stylesheet" href="/static/css/base.css">
+    </head>
+    <body id="body" data-page-name="mozilla-simple-docs-glossary">
+        <div id="nav" class="card">
+    <a href="/">
+        Home
+    </a>
+    <a href="/about">
+        About me
+    </a>
+    <a href="/mozilla_simple_docs/">
+        Simple Mozilla Documentation
+    </a>
+        </div>
+        <div id="content-wrapper" class="card">
+            <div id="content">
+    <div class="breadcrumb-container">
+        <a href="/mozilla_simple_docs/">
+            Simple Mozilla Documentation
+        </a> &gt; <b>Glossary</b>
+    </div>
+    <div id="doc-header">
+        <span class="doc-date">
+            Last modified on <b>8 April 2024</b>.
+        </span>
+    </div>
+    <div id="doc-contents" class="markdown-output" lang="en">
+        <h1>Mozilla Glossary</h1>
+<p>This page explains common terminology used by Mozilla. See also: <a href="https://firefox-source-docs.mozilla.org/glossary/index.html">https://firefox-source-docs.mozilla.org/glossary/index.html</a>.</p>
+<p>I also recommend reading through <a href="https://wiki.mozilla.org/Gecko:Overview">Gecko:Overview</a> on the Mozilla wiki for more information.</p>
+<h2>&quot;NS&quot; prefix</h2>
+<p>Mozilla source code has tons of references to &quot;NS&quot;. This is simply an abbreviation for Netscape, the company who originally wrote Mozilla technologies. Although they have been defunct for over 20 years, this naming scheme wasn't exactly dropped.</p>
+<h2>&quot;XP&quot; prefix</h2>
+<p>Not related to Windows XP. This is simply an abbreviation for &quot;cross-platform&quot;. It is used in the naming of components which are designed in order to be cross-platform, such as XPCOM or XPInstall.</p>
+<h2>Chrome</h2>
+<p>Not directly related to and predates Google Chrome. This was historically a term used to refer to the user interface of a browser, before Google named a browser after it.</p>
+<h2>XUL</h2>
+<p>XUL is Mozilla's XML-based UI markup language, with distinct elements from HTML. It was created back when HTML 4 was the standard, and CSS features like flexbox didn't yet exist. Today, XUL documents were replaced with compatible XHTML documents, but the distinction of XUL elements from HTML elements still remains in the user-interface design of Mozilla programs. Only duplicate elements have been replaced with their HTML variants where applicable.</p>
+<h2>XBL</h2>
+<p>XBL (XML Binding Language) was a feature of older versions of Mozilla. XBL bindings were set via CSS, and shaped the markup and behaviour of an element. It has since been replaced by a combination of modern web technologies, namely Shadow DOM and custom elements.</p>
+<h2><a href="https://wiki.mozilla.org/Gecko:Overview#XPCOM">XPCOM</a></h2>
+<p>XPCOM is Mozilla's cross-platform clone of Microsoft's COM (referred to in Mozilla code as MSCOM), a Windows-only technology. It has historically been ABI-compatible with Microsoft's COM, but this is deprecated and compatibility may break at any time in future Mozilla releases. XPCOM is used for sharing code interfaces, even across languages, within Mozilla applications.</p>
+<h2><a href="https://wiki.mozilla.org/Gecko:Overview#XPConnect">XPC / XPConnect</a></h2>
+<p>XPConnect is used to refer to the system that allows XPCOM objects to be used natively in JavaScript code.</p>
+<h2>XPI / XPInstall</h2>
+<p>This terminology is used by the add-on system present under Mozilla applications. See <a href="https://wiki.mozilla.org/Extension_Manager:Overview">Extension Manager:Overview</a> on the Mozilla wiki for more information.</p>
+<h2><a href="https://wiki.mozilla.org/Electrolysis">E10S / Electrolysis</a></h2>
+<p>Electrolysis was a project started in 2009 to implement a multi-process Firefox browsing context. This allowed for increased security and stability, at the expense of requiring frontend code (such as browser chrome and classic add-ons) to be rewritten. Electrolysis finally concluded in 2018, after the removal of classic add-ons from Firefox.</p>
+<h2><a href="https://wiki.mozilla.org/Project_Fission">Fission</a></h2>
+<p>Fission is a successor project to Electrolysis, extending process separation to make all distinct websites run in separate processes. It additionally resulted in the reworkings of the IPC system, <a href="https://firefox-source-docs.mozilla.org/dom/ipc/jsactors.html">introducing modern JSActors</a>.</p>
+    </div>
+            </div>
+            <div id="footer-container">
+                <div id="footer">
+                    <a href="/credits">
+                        Site credits
+                    </a>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
