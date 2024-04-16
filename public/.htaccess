@@ -1,9 +1,0 @@
-# This file only exists for my own purposes (I preview the site with an Apache server :P)
-# Ignore for GitHub sites rehost.
-
-DirectoryIndex index.html
-
-RewriteEngine On
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteRule ^([^\.]+)$ $1.html [NC,L]
