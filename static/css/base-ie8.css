@@ -133,3 +133,17 @@ a:hover {
 #doc-header .doc-date b {
   color: #000;
 }
+
+#header {
+  background: url("/static/img/hana.png");
+  filter: unset;
+  position: relative;
+}
+
+.header-gradient {
+  background: url("/static/img/ie8_logo_gradient.png");
+  width: 500px;
+  height: 100%;
+  position: absolute;
+  margin: -10px 0;
+}

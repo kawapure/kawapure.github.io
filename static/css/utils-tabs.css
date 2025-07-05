@@ -133,3 +133,56 @@ a:hover {
 #doc-header .doc-date b {
   color: #000;
 }
+
+.kawatool-tabs-tab {
+  background: #ffb3b3;
+  border: 1px solid #E38E9E;
+  color: #fff;
+  z-index: 3;
+  height: 20px;
+  vertical-align: bottom;
+  position: relative;
+  cursor: pointer;
+}
+.kawatool-tabs-tab:hover {
+  background: #ffc0c0;
+}
+.kawatool-tabs-tab.kawatool-tabs-active {
+  background: #fff;
+  border-bottom-width: 0;
+  color: #E38E9E;
+  height: 24px;
+  z-index: 4;
+  left: 0;
+  cursor: default;
+}
+.kawatool-tabs-tab.kawatool-tabs-active:hover {
+  background: #fff;
+}
+.kawatool-tabs .kawatool-tabs-tab + .kawatool-tabs-tab.kawatool-tabs-active {
+  left: -1px;
+  margin-right: -1px;
+}
+.kawatool-tabs .kawatool-tabs-tab + .kawatool-tabs-tab {
+  border-left-width: 0;
+}
+.kawatool-tabs .kawatool-tabs-tab.kawatool-tabs-active {
+  border-left-width: 1px;
+}
+.kawatool-tabs-switcher * {
+  margin: 0;
+}
+.kawatool-tabs-container {
+  z-index: 2;
+  display: block;
+  border: 1px solid #E38E9E;
+  position: relative;
+  top: -1px;
+  height: 300px;
+}
+.kawatool-tabs-container .kawatool-tabs-tab-content {
+  display: none;
+}
+.kawatool-tabs-container .kawatool-tabs-tab-content.kawatool-tabs-active {
+  display: block;
+}

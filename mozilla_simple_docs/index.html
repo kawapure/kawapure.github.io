@@ -2,28 +2,94 @@
 <!-- shh the html is not written by hand :3 -->
 <html lang="en">
     <head>
+        <link rel="prefetch" href="/static/css/base.css" />
+        <link rel="prefetch" href="/static/img/bg2.png" />
+        <link rel="prefetch" href="/static/img/logo.png" />
+        <link rel="prefetch" href="/static/img/hana.png" />
         <meta charset="UTF-8" />
         <meta property="og:title" content="Isabella&apos;s simple Mozilla documentation" />
         <meta property="og:description" content="Because Mozilla&apos;s own documentation can be pretty hard to understand, I decided to make my own introductory documentation to the Mozilla platform." />
         <meta property="og:image" content="/static/img/cute.gif" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Simple Mozilla Documentation - kawapure</title>
-        <link rel="prefetch" href="/static/css/base.css" />
-        <link rel="prefetch" href="/static/img/bg.png" />
         <link rel="stylesheet" href="/static/css/base.css">
+        <!--[if lte IE 10]>
+        <link rel="stylesheet" href="/static/css/base-ie8.css">
+        <![endif]-->
+        <script src="/static/js/common.js" type="text/javascript"></script>
+        <!-- Scaling script -->
+        <script>
+        (function() {
+            var CLASS = "content-snap-width-";
+            
+            function getWidth()
+            {
+                return window.innerWidth || document.documentElement.clientWidth;
+            }
+            
+            function updatePageWidth()
+            {
+                var newWidth = getWidth();
+                
+                for (var i = 1; i <= 3; i++)
+                    g_kawapure.removeClass(document.documentElement, CLASS + String(i));
+                
+                if (newWidth < 1400 + 1)
+                {
+                    g_kawapure.addClass(document.documentElement, CLASS + "1");
+                }
+                else if (newWidth < 1900 + 1)
+                {
+                    g_kawapure.addClass(document.documentElement, CLASS + "2");
+                }
+                else
+                {
+                    g_kawapure.addClass(document.documentElement, CLASS + "3");
+                }
+            }
+            
+            g_kawapure.addEventListener(window, "resize", updatePageWidth);
+            updatePageWidth();
+        })()
+        </script>
     </head>
     <body id="body" data-page-name="msd">
-        <div id="nav" class="card">
-    <a href="/">
-        Home
-    </a>
-    <a href="/about">
-        About me
-    </a>
-    <a href="/mozilla_simple_docs/" class="active">
-        Simple Mozilla Documentation
-    </a>
-        </div>
-        <div id="content-wrapper" class="card">
+        <div id="main-content" class="card">
+            <div id="header">
+                <!-- Early Internet Explorer hack for the gradient (no background layers) -->
+                <!--[if lte IE 10]>
+                <div class="header-gradient"></div>
+                <![endif]-->
+                <div id="logo" aria-label="kawapure's site">
+                    <a href="/" title="kawapure's site"></a>
+                </div>
+                <div id="nav">
+    <span class="nav-link-container">
+        <a href="/">
+            Home
+        </a>
+        <span class="measurement-base">
+            Home
+        </span>
+    </span>
+    <span class="nav-link-container">
+        <a href="/about">
+            About me
+        </a>
+        <span class="measurement-base">
+            About me
+        </span>
+    </span>
+    <span class="nav-link-container">
+        <a href="/mozilla_simple_docs/" class="active">
+            Simple Mozilla Documentation
+        </a>
+        <span class="measurement-base">
+            Simple Mozilla Documentation
+        </span>
+    </span>
+                </div>
+            </div>
             <div id="content">
     <h1>Simple Mozilla Documentation</h1>
     <p class="description">
@@ -50,6 +116,10 @@
                 <div id="footer">
                     <a href="/credits">
                         Site credits
+                    </a>
+                    •
+                    <a href="/contact">
+                        Contact me
                     </a>
                 </div>
             </div>
